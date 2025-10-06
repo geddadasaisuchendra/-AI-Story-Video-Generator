@@ -88,7 +88,7 @@ with st.form("video_form"):
                     # ---------------------------
                     # Step 4: Generate Videos via Seedance
                     # ---------------------------
-                    SEEDANCE_TOKEN = st.secrets["seedance"]["API_KEY"]
+                    SEEDANCE_TOKEN = SEEDANCE_API_KEY
                     COMPLIANCE_URL = "https://replicate-five.vercel.app/"
                     scene_videos = []
 
