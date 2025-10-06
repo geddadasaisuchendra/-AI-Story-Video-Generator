@@ -6,7 +6,9 @@ import requests
 import json
 from moviepy import VideoFileClip, AudioFileClip, concatenate_videoclips, CompositeAudioClip
 import os
-os.environ["REPLICATE_API_TOKEN"] = st.secrets["seedance"]["API_KEY"]
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+SEEDANCE_API_KEY = os.environ.get("SEEDANCE_API_KEY")
+os.environ["REPLICATE_API_TOKEN"] = SEEDANCE_API_KEY
 
 st.title("🎬 AI Story Video Generator")
 st.markdown("Generate a short narrated Story Reel...")
@@ -49,7 +51,7 @@ with st.form("video_form"):
 
                     # OpenRouter LLM call (your LLM)
                     headers = {
-                        "Authorization": f"Bearer {st.secrets['openrouter']['API_KEY']}",
+                        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
                         "Content-Type": "application/json",
                     }
                     payload = {
