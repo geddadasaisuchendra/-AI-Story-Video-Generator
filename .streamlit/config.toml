@@ -2,7 +2,6 @@
 
 [server]
 # Render sets the $PORT environment variable automatically
-port = $PORT
 headless = true
 enableCORS = false
 
